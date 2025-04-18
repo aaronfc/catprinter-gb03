@@ -10,7 +10,9 @@
 - Ready command is updated.
 - Added text printing support (with emojis 🚀)
   - Examples: `cat text.txt | ./print-text.py` or `./print-text.py "Hello\nWorld🚀"`.
-
+- Added server to print via webhook (webhook.site).
+  - Run server: `python webhook_printer_server.py --webhook-url "YOUR_WEBHOOK_URL"`
+  - Send message: `curl -X POST "YOUR_WEBHOOK_URL" -H "Content-Type: application/json" -d '{"message":"Hello from the internet 🚀!"}'`
 ---
 
  Original README from here.
