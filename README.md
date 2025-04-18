@@ -1,4 +1,16 @@
+> [!WARNING]
+> This is a fork with customizations I made for my own device – reported as GB03.
+> Use with caution. If it's useful to you as it is, I am happy for you! But don't expect any support.
+
+# Fork Changelog 
+
+- Printing quality is better for my GB03 device.
+- Ready command is updated.
+- Added new `./print-text.py` command. Examples: `cat text.txt | ./print-text.py` or `./print-text.py "Hello\nWorld"`.
+
 ![Cat Printer](./media/hackoclock.jpg)
+
+-- Original README from here.
 
 Cat printer is a portable thermal printer sold on AliExpress for around $20.
 
