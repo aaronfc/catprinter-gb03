@@ -15,9 +15,11 @@ def parse_args():
                         help='Image width in pixels (default: 384)')
     parser.add_argument('-p', '--padding', type=int, default=20,
                         help='Padding around text in pixels (default: 20)')
+    parser.add_argument('--no-emoji', action='store_true',
+                        help='Disable emoji-compatible font (default: emoji support is enabled)')
     return parser.parse_args()
 
-def text_to_image(text, font_size=24, width=384, padding=20, output_file='text.png'):
+def text_to_image(text, font_size=24, width=384, padding=20, output_file='text.png', use_emoji=True):
     """
     Creates an image with black text on white background
     
@@ -27,14 +29,21 @@ def text_to_image(text, font_size=24, width=384, padding=20, output_file='text.p
         width: Width of the image in pixels
         padding: Padding around text in pixels
         output_file: Path to save the output image
+        use_emoji: Whether to use emoji-compatible font
     
     Returns:
         Path to the created image file
     """
-    # Create a temporary image to measure text dimensions
-    font_path = None
-    
     # Try to find a font on the system
+    font_path = None
+    emoji_font_path = None
+    
+    # Check for OpenSansEmoji font in local fonts directory
+    local_emoji_font = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'fonts', 'OpenSansEmoji.ttf')
+    if os.path.exists(local_emoji_font):
+        emoji_font_path = local_emoji_font
+    
+    # Common font paths
     font_options = [
         # Common font paths on macOS/Linux/Windows
         '/System/Library/Fonts/Helvetica.ttc',
@@ -49,11 +58,15 @@ def text_to_image(text, font_size=24, width=384, padding=20, output_file='text.p
             font_path = path
             break
     
-    if font_path is None:
+    # Choose the appropriate font
+    if use_emoji and emoji_font_path:
+        print(f"Using emoji font: {emoji_font_path}")
+        font = ImageFont.truetype(emoji_font_path, font_size)
+    elif font_path:
+        font = ImageFont.truetype(font_path, font_size)
+    else:
         # Use a default font if none of the above exist
         font = ImageFont.load_default()
-    else:
-        font = ImageFont.truetype(font_path, font_size)
     
     # Split text into lines to handle wrapping
     # First split by explicit newlines in the text
@@ -121,7 +134,8 @@ def main():
         font_size=args.font_size,
         width=args.width,
         padding=args.padding,
-        output_file=args.output
+        output_file=args.output,
+        use_emoji=not args.no_emoji
     )
     
     print(f"Image created: {output_file}")
