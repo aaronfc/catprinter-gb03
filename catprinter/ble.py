@@ -20,7 +20,7 @@ POSSIBLE_SERVICE_UUIDS = [
 TX_CHARACTERISTIC_UUID = "0000ae01-0000-1000-8000-00805f9b34fb"
 RX_CHARACTERISTIC_UUID = "0000ae02-0000-1000-8000-00805f9b34fb"
 
-PRINTER_READY_NOTIFICATION = b"\x51\x78\xae\x01\x01\x00\x00\x00\xff"
+PRINTER_READY_NOTIFICATION = b"\x51\x78\xa3\x01\x03\x00\x00\x0f\x27\x36\xff"
 
 SCAN_TIMEOUT_S = 10
 
@@ -75,7 +75,7 @@ async def get_device_address(device: Optional[str]):
 
 def notification_receiver_factory(event):
     def notification_receiver(sender, data):
-        logger.debug(f"📡 Received notification: {data}")
+        logger.debug(f"📡 Received notification: {data.hex()}")
         if data == PRINTER_READY_NOTIFICATION:
             event.set()
 
