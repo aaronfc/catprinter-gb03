@@ -62,7 +62,8 @@ def main():
         'python', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'print.py'),
         output_file,
         '-b', args.img_binarization_algo,
-        '-e', args.energy
+        '-e', args.energy,
+        '-l', 'debug'
     ]
     
     # Add optional arguments if specified
