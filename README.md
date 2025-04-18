@@ -9,7 +9,7 @@
 - Printing quality is better for my GB03 device.
 - Ready command is updated.
 - Added text printing support (with emojis 🚀)
- - Examples: `cat text.txt | ./print-text.py` or `./print-text.py "Hello\nWorld🚀"`.
+  - Examples: `cat text.txt | ./print-text.py` or `./print-text.py "Hello\nWorld🚀"`.
 
 ---
 
