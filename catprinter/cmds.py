@@ -23,7 +23,7 @@ CMD_GET_DEV_STATE = bs([
     81, 120, -93, 0, 1, 0, 0, 0, -1
 ])
 
-CMD_SET_QUALITY_200_DPI = bs([81, 120, -92, 0, 1, 0, 50, -98, -1])
+CMD_SET_QUALITY_200_DPI = bs([81, 120, -92, 0, 1, 0, 55, -98, -1])
 
 CMD_GET_DEV_INFO = bs([81, 120, -88, 0, 1, 0, 0, 0, -1])
 
