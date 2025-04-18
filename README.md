@@ -8,13 +8,13 @@
 - Ready command is updated.
 - Added new `./print-text.py` command. Examples: `cat text.txt | ./print-text.py` or `./print-text.py "Hello\nWorld"`.
 
-![Cat Printer](./media/hackoclock.jpg)
-
 ---
 
  Original README from here.
 
  ---
+
+![Cat Printer](./media/hackoclock.jpg)
 
 Cat printer is a portable thermal printer sold on AliExpress for around $20.
 
