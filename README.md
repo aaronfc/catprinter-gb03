@@ -10,7 +10,11 @@
 
 ![Cat Printer](./media/hackoclock.jpg)
 
--- Original README from here.
+---
+
+ Original README from here.
+
+ ---
 
 Cat printer is a portable thermal printer sold on AliExpress for around $20.
 
