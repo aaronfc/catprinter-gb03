@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/72a5e0d3-3c1a-4ee7-ad76-27ae65fb912e)
+
 > [!WARNING]
 > This is a fork with customizations I made for my own device – reported as GB03.
 > Use with caution. If it's useful to you as it is, I am happy for you! But don't expect any support.
@@ -6,7 +8,8 @@
 
 - Printing quality is better for my GB03 device.
 - Ready command is updated.
-- Added new `./print-text.py` command. Examples: `cat text.txt | ./print-text.py` or `./print-text.py "Hello\nWorld"`.
+- Added text printing support (with emojis 🚀)
+ - Examples: `cat text.txt | ./print-text.py` or `./print-text.py "Hello\nWorld🚀"`.
 
 ---
 
